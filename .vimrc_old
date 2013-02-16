@@ -1,0 +1,120 @@
+" Last edit: 05-Jan-2012
+" Modeline and Notes {
+"   vim: set foldmarker={,} foldlevel=0 spell:
+" }
+
+" Basics {
+    set nocompatible " explicitly get out of vi-compatible mode
+    "set noexrc " don't use local version of .(g)vimrc, .exrc
+    "set background=dark " we plan to use a dark background
+    "set cpoptions=aABceFsmq
+    "             |||||||||
+    "             ||||||||+-- When joining lines, leave the cursor 
+    "             |||||||      between joined lines
+    "             |||||||+-- When a new match is created (showmatch) 
+    "             ||||||      pause for .5
+    "             ||||||+-- Set buffer options when entering the 
+    "             |||||      buffer
+    "             |||||+-- :write command updates current file name
+    "             ||||+-- Automatically add <CR> to the last line 
+    "             |||      when using :@r
+    "             |||+-- Searching continues at the end of the match 
+    "             ||      at the cursor position
+    "             ||+-- A backslash has no special meaning in mappings
+    "             |+-- :write updates alternative file name
+    "             +-- :read updates alternative file name
+    syntax on " syntax highlighting on
+" }"
+if &term =~ "xterm"
+ set t_Co=256
+ if has("terminfo")
+   let &t_Sf=nr2char(27).'[3%p1%dm'
+   let &t_Sb=nr2char(27).'[4%p1%dm'
+ else
+   let &t_Sf=nr2char(27).'[3%dm'
+   let &t_Sb=nr2char(27).'[4%dm'
+ endif
+endif
+
+set formatoptions+=l
+set nolist
+set wrap
+set wrapmargin=0
+set linebreak
+set breakat=\ |@-+;:,./?^I
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set bs=2
+set ignorecase
+set smartcase
+set gdefault
+set autoindent
+set autowrite
+set hlsearch
+set incsearch
+set showmatch
+set vb t_vb=
+set ruler
+set cursorline
+set smartindent
+setlocal spell spelllang=en
+set nospell
+set encoding=utf-8
+set number
+nnoremap / /\v
+vnoremap / /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
+let mapleader = ","
+nnoremap <leader><space> :noh<cr>
+nnoremap <leader>t :tabnew<cr>:e
+nnoremap <leader>pp :set paste<cr>
+nnoremap <leader>np :set nopaste<cr>
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <up> gk
+nnoremap <down> gj
+vnoremap <up> gk
+vnoremap <down> gj
+filetype plugin on 
+set ofu=syntaxcomplete#Complete
+
+" Tab autocompletes
+function! Mosh_Tab_Or_Complete()
+    if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+        return "\<C-N>"
+    else
+        return "\<Tab>"
+endfunction
+
+:inoremap <Tab> <C-R>=Mosh_Tab_Or_Complete()<CR>
+
+" Ctrl + T opens new tab
+:nmap <C-S-tab> :tabprevious<cr>
+:nmap <C-tab> :tabnext<cr>
+:nmap <C-t> :tabnew<cr>
+:map <C-t> :tabnew<cr>:e 
+:map <C-S-tab> :tabprevious<cr>
+:map <C-tab> :tabnext<cr>
+:imap <C-S-tab> <ESC>:tabprevious<cr>i
+:imap <C-tab> <ESC>:tabnext<cr>i
+:imap <C-t> <ESC>:tabnew<cr>
+
+au BufNewFile,BufRead *.gms setf gams
+
+" Common typos
+:iab functino function
+
+command! W :w
+command! Q :q
+command! Wq :wq
+command! WM :w | :make
+map <F1> <Esc>
+imap <F1> <Esc>
+imap <C-c> <Esc>
+
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
