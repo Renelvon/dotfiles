@@ -16,11 +16,6 @@ export HISTCONTROL=ignoredups
 #     alias vdir='ls --color=auto --format=long'
 # fi
 
-# some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Comment in the above and uncomment this below for a color prompt
 # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\][\u@\h]\[\033[00m\] \[\033[01;34m\]\w \$ \[\033[00m\]'
 # PS1=$'%{\e[1;32m%}%n%M%{\e[0m%} %{\e[1;34m%}%~ %#%{\e[0m%} '
@@ -42,11 +37,22 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-  ZSH_THEME="renelvon"
+ZSH_THEME="renelvon"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# some more ls aliases
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+
+# current folder usage
+alias cfu='du ./* -s | sort -g'
+
+# evince shortcut for dyslectics
+alias pvf=evince
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -69,6 +75,7 @@ ZSH=$HOME/.oh-my-zsh
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+unsetopt correct_all
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/sbin:~/Repos/myScripts
+export PATH=/usr/local/cuda-5.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/Repos/myScripts
