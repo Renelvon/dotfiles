@@ -1,35 +1,3 @@
-# ~/.zshrc: executed by zsh(1) for non-login shells.
-
-# If not running interactively, don't do anything:
-[ -z "$PS1" ] && return
-
-# autoload -U colors && colors
-
-# don't put duplicate lines in the history. See bash(1) for more options
-export HISTCONTROL=ignoredups
-
-# enable color support of ls and also add handy aliases
-# if [ "$TERM" != "dumb" ]; then
-#     eval "`dircolors -b`"
-#     alias ls='ls --color=auto'
-#     alias dir='ls --color=auto --format=vertical'
-#     alias vdir='ls --color=auto --format=long'
-# fi
-
-# Comment in the above and uncomment this below for a color prompt
-# PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\][\u@\h]\[\033[00m\] \[\033[01;34m\]\w \$ \[\033[00m\]'
-# PS1=$'%{\e[1;32m%}%n%M%{\e[0m%} %{\e[1;34m%}%~ %#%{\e[0m%} '
-# RPS1=' [ %* %W ]'
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
-    ;;
-*)
-    ;;
-esac
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -48,17 +16,38 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
+# GAMS
+alias gams=/home/renelvon/Documents/Courses/MathProgModels/gams/gams24.0_linux_x64_64_sfx/gams
+alias gamslib=/home/renelvon/Documents/Courses/MathProgModels/gams/gams24.0_linux_x64_64_sfx/gamslib
+
 # current folder usage
 alias cfu='du ./* -s | sort -g'
 
 # evince shortcut for dyslectics
 alias pvf=evince
 
+# vim read-only made easy
+alias vr=vim -R 
+
+# Kinda bored...
+alias sag='sudo apt-get '
+
+# Python3
+alias p3='python3'
+# Frequent Dropbox folder
+alias eee='cd /home/renelvon/Dropbox/Archive/ECE_NTUA'
+
+# open nemo in current directory
+#mynemo() {nemo `pwd`;}
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
-# Comment this out to disable weekly auto-update checks
+# Comment this out to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
+
+# Uncomment to change how often before auto-updates occur? (in days)
+# export UPDATE_ZSH_DAYS=13
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -66,8 +55,16 @@ alias pvf=evince
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
+# Uncomment following line if you want to disable command autocorrection
+# DISABLE_CORRECTION="true"
+
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-  COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment following line if you want to disable marking untracked files under
+# VCS as dirty. This makes repository status check for large repositories much,
+# much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -78,4 +75,6 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
 # Customize to your needs...
-export PATH=/usr/local/cuda-5.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/Repos/myScripts
+SCRIPTS=~/Repos/myScripts
+MPICH3=~/Documents/Courses/Parallel/mpich3/install/bin
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$SCRIPTS:$MPICH3
