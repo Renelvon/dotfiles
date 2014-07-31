@@ -5,7 +5,6 @@
 
 " Basics {
     "set noexrc " don't use local version of .(g)vimrc, .exrc
-
     "set cpoptions=aABceFsmq
     "             |||||||||
     "             ||||||||+-- When joining lines, leave the cursor 
