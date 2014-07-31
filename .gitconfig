@@ -1,0 +1,18 @@
+[color]
+    ui = true
+[core]
+	editor = vim
+	excludesfile = /home/renelvon/.gitignore
+	autocrlf = input
+[credential]
+    helper = cache --timeout=3600
+[diff]
+    renames = true
+[user]
+	email = renelvon@gmail.com
+	name = Nikolaos Korasidis
+    signingkey = 4E14AD62
+[push]
+	default = simple
+[merge]
+	tool = meld
