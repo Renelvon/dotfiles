@@ -23,10 +23,6 @@ set cursorline      		" ???
 " call pathogen#infect()      " Make pathogen load plugins
 " call pathogen#helptags()    " Make pathogen load plugin helpfiles
 
-" -> Vim LaTeX-suite <-
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
-
 " -> GAMS <- highlighting
 au BufNewFile,BufRead *.gms setf gams
 
@@ -45,7 +41,7 @@ imap <F1> <Esc>
 map <F5> :w<CR>:make<CR> 	" Reload!
 
 map <F3> <Esc>YpVr- 		" Fast single underlining [for markup]
-map <F4> <Esc>YpVr= 		" Fast souble underlining [for markup]
+map <F4> <Esc>YpVr= 		" Fast double underlining [for markup]
 
 " -> LEADER MAPPINGS <-
 let mapleader = ","
