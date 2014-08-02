@@ -6,15 +6,17 @@ set encoding=utf-8			" UTF-8 encoding everywhere
 
 " ==> SYNTAX & INDENTATION <==
 filetype plugin indent on   " Indent according to filetype
+syntax on           		" Enable syntax highlight
 set tabstop=4               " A tab is 4 spaces
 set softtabstop=4           " ???
 set expandtab               " Use spaces, not tabs
 set shiftwidth=4	 		" ???
 set autoindent              " Preserve indentation upon newline
+set smartindent 			" Indent according to language
+set backspace=indent,eol,start  " ???
 
 " ==> EDITING ENV <==
 "set background=dark 		" Use a dark background
-syntax on           		" Enable syntax highlight
 set number          		" Enable line numbers by default
 set ruler           		" Show current cursor position
 set cursorline      		" ???
@@ -43,6 +45,27 @@ map <F5> :w<CR>:make<CR> 	" Reload!
 map <F3> <Esc>YpVr- 		" Fast single underlining [for markup]
 map <F4> <Esc>YpVr= 		" Fast double underlining [for markup]
 
+" -> MOVEMENT MAPPINGS <-
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <up> gk
+nnoremap <down> gj
+vnoremap <up> gk
+vnoremap <down> gj
+
+" -> SEARCH MAPPINGS <-
+nnoremap / /\v
+vnoremap / /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
+
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
+
 " -> LEADER MAPPINGS <-
 let mapleader = ","
 nnoremap <leader><space> :noh<cr>
@@ -68,3 +91,8 @@ endfunction
 
 " Tab autocompletes
 :inoremap <Tab> <C-R>=Mosh_Tab_Or_Complete()<CR>
+
+" ==> PLUGIN MANAGEMENT <==
+" Use vim bundles!
+execute pathogen#infect()
+set sessionoptions-=options     " No capturing of global options in sessions.
