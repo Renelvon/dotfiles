@@ -11,11 +11,6 @@ ZSH_THEME='renelvon'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-
 # GAMS
 alias gams=/home/renelvon/Documents/Courses/MathProgModels/gams/gams24.0_linux_x64_64_sfx/gams
 alias gamslib=/home/renelvon/Documents/Courses/MathProgModels/gams/gams24.0_linux_x64_64_sfx/gamslib
@@ -34,6 +29,7 @@ alias sag='sudo apt-get '
 
 # Python3
 alias p3='python3'
+alias p3m='python3 -m pdb'
 
 # Frequent Dropbox folder
 alias eee='cd /home/renelvon/Dropbox/Archive/ECE_NTUA'
@@ -41,7 +37,7 @@ alias eee='cd /home/renelvon/Dropbox/Archive/ECE_NTUA'
 # open nemo in current directory
 #mynemo() {nemo `pwd`;}
 
-# Set to this to use case-sensitive completion
+# Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -84,4 +80,21 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 SCRIPTS=~/Repos/sys/scripts
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$SCRIPTS
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$SCRIPTS"
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
