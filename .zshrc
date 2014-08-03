@@ -81,7 +81,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 SCRIPTS=~/Repos/sys/scripts
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$SCRIPTS"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$SCRIPTS"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
