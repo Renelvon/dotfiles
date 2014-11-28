@@ -11,9 +11,13 @@ ZSH_THEME='renelvon'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+
 # GAMS
-alias gams=/home/renelvon/Documents/Courses/MathProgModels/gams/gams24.0_linux_x64_64_sfx/gams
-alias gamslib=/home/renelvon/Documents/Courses/MathProgModels/gams/gams24.0_linux_x64_64_sfx/gamslib
+alias gams=/opt/gams/gams24.3_linux_x64_64_sfx/gams
+alias gamslib=/opt/gams/gams24.3_linux_x64_64_sfx/gamslib
 
 # current folder usage
 alias cfu='du ./* -s | sort -g'
