@@ -1,8 +1,4 @@
-##INSTALL
-Simply run install.sh and what you want to install e.g
+dotfiles
+========
 
-    $ ./install.sh vim
-
-`./install all` will copy all of my config files to your home
-
-WARNING: your config files will be overwritten!
+My dotfiles for everyone to use. Influenced by: @dionyziz and @mastergreg.
