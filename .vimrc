@@ -10,10 +10,10 @@ syntax on           		" Enable syntax highlight
 set tabstop=4               " A tab is 4 spaces
 set softtabstop=4           " ???
 set expandtab               " Use spaces, not tabs
-set shiftwidth=4	 		" ???
+set shiftwidth=4	 		" Autoindentation depth
 set autoindent              " Preserve indentation upon newline
 set smartindent 			" Indent according to language
-set backspace=indent,eol,start  " ???
+set backspace=indent,eol,start  " Allow backspacing over everything in insert mode
 
 " ==> EDITING ENV <==
 "set background=dark 		" Use a dark background
@@ -29,11 +29,12 @@ set cursorline      		" ???
 au BufNewFile,BufRead *.gms setf gams
 
 " ==> OTHER <==
-set showcmd         " Show command as it's being built
-set title           " Set terminal title to reflect current buffer
+set showcmd                 " Show incomplete commands
+set title                   " Set terminal title to reflect current buffer
 
 " ==> SEARCHING <==
 set incsearch       " Display search matches halfway as I type them
+set hlsearch        " Highlight search matches
 
 " ==> KEYMAPS <==
 map <C-c> <Esc>             " SIGINT takes you to normal mode
